@@ -1,15 +1,15 @@
-import logo from './logo.svg';
-import './App.css';
-import Menu from './component/Menu';
-import Home from './component/Home';
-import { useState } from 'react';
+import React, { useState } from "react";
+import Header from "./component/Header";
+import Home1 from "./component/Home1";
 
 function App() {
-  const [dark,setDark]=useState(false)
+  const [isDark, setIsDark] = useState(false);
+
   return (
-    <div className="App">
-      <Menu setdark={setDark} dark={dark}/>
-      <Home dark={dark}/>
+    <div >
+      <Header dark={isDark} setIsDark={setIsDark} />
+      
+      <Home1 dark={isDark} />
     </div>
   );
 }

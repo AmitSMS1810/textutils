@@ -9,7 +9,7 @@ function Home(props) {
 
   const eventhandeler = (e) => {
     setTxt(e.target.value);
-
+ 
   }
   const capitalLater = (e) => {
     setTxt(text.toUpperCase());
@@ -39,7 +39,7 @@ function Home(props) {
   }
   const copyText = (e) => {
     navigator.clipboard.writeText(text);
-    showMessage('Text copy')
+    showMessage('Text copy') 
   }
   const textClear = (e) => {
     setTxt('');
@@ -53,20 +53,19 @@ function Home(props) {
   }
   const word = text.trim() ? text.trim().split(/\s+/).length : 0;
   const character = text.length;
-  console.log(text.length)
   return (
-    <div className={`${props.dark ? "bg-black text-white" : "bg-white-500 text-black w-full"} w-full mx-auto`}>
+    <div className={`${props.dar ? "bg-black text-white" : "bg-white text-black w-full"} w-full mx-auto mt-8`}>
 
-      <div className='mt-2 h-20'> {message && <div className="text-black-500 font-bold bg-green-200 h-12">
+       {message && <div className="text-black-500 font-bold bg-green-200 h-12">
         {message}
       </div>}
-      </div>
+      
       <div className="w-[75%] mx-auto ml-3 ">
         <h3 className="text-4xl font-bold  text-start">
           Enter Your Text to Analyze
         </h3>
         
-          <textarea className={`px-2 ${props.dark ? "bg-black text-white" : " text-black"} w-full mt-3 border border-blue-700 
+          <textarea className={`px-2 ${props.dar ? "bg-black text-white" : " text-black"} w-full mt-3 border border-blue-700 
           rounded focus:outline-none`}
             rows="10"
             cols="20"
@@ -76,13 +75,13 @@ function Home(props) {
         
       </div>
       <div className="m-4 flex justify-start ">
-        <button disabled={text.length > 0 ? false : true} className={`${props.dark ? "bg-blue-800 text-white" : "bg-blue-500 text-white"} m-2 p-2 rounded hover:before:`} onClick={capitalLater}>UperCase</button>
-        <button disabled={text.length > 0 ? false : true} className={`${props.dark ? "bg-blue-800 text-white" : "bg-blue-500 text-white"} m-2 p-2 rounded`} onClick={smalLater}>LowerCase</button>
-        <button disabled={text.length > 0 ? false : true} className={`${props.dark ? "bg-blue-800 text-white" : "bg-blue-500 text-white"} m-2 p-2 rounded`} onClick={caps}>Capitalise</button>
-        <button disabled={text.length > 0 ? false : true} className={`${props.dark ? "bg-blue-800 text-white" : "bg-blue-500 text-white"} m-2 p-2 rounded`} onClick={sentenceCare}>Sentence Care</button>
-        <button disabled={text.length > 0 ? false : true} className={`${props.dark ? "bg-blue-800 text-white" : "bg-blue-500 text-white"} m-2 p-2 rounded`} onClick={removeSpace}>Reamove Extra Space</button>
-        <button disabled={text.length > 0 ? false : true} className={`${props.dark ? "bg-blue-800 text-white" : "bg-blue-500 text-white"} m-2 p-2 rounded`} onClick={copyText}>Copy Text</button>
-        <button disabled={text.length > 0 ? false : true} className={`${props.dark ? "bg-blue-800 text-white" : "bg-blue-500 text-white"} m-2 p-2 rounded`} onClick={textClear}>Clear Text</button>
+        <button disabled={text.length > 0 ? false : true} className={`${props.dar ? "bg-blue-800 text-white" : "bg-blue-500 text-white"} m-2 p-2 rounded hover:before:`} onClick={capitalLater}>UperCase</button>
+        <button disabled={text.length > 0 ? false : true} className={`${props.dar ? "bg-blue-800 text-white" : "bg-blue-500 text-white"} m-2 p-2 rounded`} onClick={smalLater}>LowerCase</button>
+        <button disabled={text.length > 0 ? false : true} className={`${props.dar ? "bg-blue-800 text-white" : "bg-blue-500 text-white"} m-2 p-2 rounded`} onClick={caps}>Capitalise</button>
+        <button disabled={text.length > 0 ? false : true} className={`${props.dar ? "bg-blue-800 text-white" : "bg-blue-500 text-white"} m-2 p-2 rounded`} onClick={sentenceCare}>Sentence Care</button>
+        <button disabled={text.length > 0 ? false : true} className={`${props.dar ? "bg-blue-800 text-white" : "bg-blue-500 text-white"} m-2 p-2 rounded`} onClick={removeSpace}>Reamove Extra Space</button>
+        <button disabled={text.length > 0 ? false : true} className={`${props.dar ? "bg-blue-800 text-white" : "bg-blue-500 text-white"} m-2 p-2 rounded`} onClick={copyText}>Copy Text</button>
+        <button disabled={text.length > 0 ? false : true} className={`${props.dar ? "bg-blue-800 text-white" : "bg-blue-500 text-white"} m-2 p-2 rounded`} onClick={textClear}>Clear Text</button>
       </div>
       <h3 className="text-4xl pt-12 text-start">
         Your Text Summery

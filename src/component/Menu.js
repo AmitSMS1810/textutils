@@ -8,18 +8,18 @@ function Menu(props) {
   const [isOpen, setIsOpen] = useState(false);
 
   const eventDark = (e) => {
-    if (props.dark) {
+    if (props.dar) {
       props.setdark(false)
     } else {
       props.setdark(true)
     }
 
   }
-
+ 
   return (
     <div>
 
-      <nav className={`${props.dark ? "bg-black text-white" : "bg-blue-500 text-black"}`}>
+      <nav className={`${props.dar ? "bg-black text-white" : "bg-blue-500 text-black"}`}>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between h-16">
             <div className="flex items-center">
